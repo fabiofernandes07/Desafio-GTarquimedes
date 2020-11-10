@@ -32,7 +32,7 @@ public class UsuarioController {
         }
 
 
-        builder.directory(new File(System.getProperty("user.home")));
+        builder.directory(new File(System.getProperty("user.dir")));
         try {
             builder.start();
             alert.start();
