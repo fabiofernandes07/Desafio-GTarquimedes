@@ -13,7 +13,7 @@ import java.io.IOException;
 public class UsuarioController {
 
 
-    @GetMapping("/api/{nomearquivo}/{conteudo}")
+    @GetMapping("/api/v1/desafio/{nomearquivo}/{conteudo}")
     public ResponseEntity<?> consultar(@PathVariable("nomearquivo") String nomearquivo, @PathVariable("conteudo") String conteudo) {
 
 
