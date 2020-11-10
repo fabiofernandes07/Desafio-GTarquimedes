@@ -13,3 +13,4 @@ Desafio parar criar um WebService REST utilizando Java/Spring Boot e shell scrip
 
 2.4- O WebService deve receber a mensagem exibida pelo shell script e retornar para o usuário;
 
+Exemplo: http://localhost:8080/api/v1/desafio/teste/texto
