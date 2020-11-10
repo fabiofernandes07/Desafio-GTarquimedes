@@ -17,11 +17,23 @@ public class UsuarioController {
     public ResponseEntity<?> consultar(@PathVariable("nomearquivo") String nomearquivo, @PathVariable("conteudo") String conteudo) {
 
 
-        ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", "echo "+ conteudo +" >  "+ nomearquivo +".txt");
-        ProcessBuilder alert = new ProcessBuilder("cmd.exe", "/c", "msg %username% o arquivo "+ nomearquivo +" foi criado com sucesso");
-        pb.directory(new File(System.getProperty("user.home")));
+        boolean isWindows = System.getProperty("os.name")
+                .toLowerCase().startsWith("windows");
+
+        ProcessBuilder builder = new ProcessBuilder();
+        ProcessBuilder alert = new ProcessBuilder();
+        if (isWindows) {
+            builder.command("cmd.exe", "/c", "echo "+ conteudo +" >  "+ nomearquivo +".txt");
+            alert.command("cmd.exe", "/c", "msg %username% o arquivo "+ nomearquivo +" foi criado com sucesso");
+
+        } else {
+            builder.command("sh", "-c", "echo "+ conteudo +" >  "+ nomearquivo +".txt");
+        }
+
+
+        builder.directory(new File(System.getProperty("user.home")));
         try {
-            pb.start();
+            builder.start();
             alert.start();
         } catch (IOException e) {
             System.out.println("error");
