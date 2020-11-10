@@ -27,8 +27,8 @@ public class UsuarioController {
             alert.command("cmd.exe", "/c", "msg %username% o arquivo "+ nomearquivo +" foi criado com sucesso");
 
         } else {
-            builder.command("sh", "-c", "echo "+ conteudo +" >  "+ nomearquivo +".txt");
-            alert.command("sh", "-c", "echo o arquivo "+ nomearquivo +" foi criado com sucesso");
+            builder.command("sh", "-c", "/bin/bash ./Build.sh "+ conteudo +" "+ nomearquivo);
+            alert.command("sh", "-c", "zenity --info --text=\" o arquivo "+ nomearquivo +" foi gerado com sucesso\"");
         }
 
 
