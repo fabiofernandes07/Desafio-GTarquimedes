@@ -17,6 +17,7 @@ public class UsuarioController {
     public ResponseEntity<?> consultar(@PathVariable("nomearquivo") String nomearquivo, @PathVariable("conteudo") String conteudo) {
 
 
+
         boolean isWindows = System.getProperty("os.name")
                 .toLowerCase().startsWith("windows");
 
