@@ -17,4 +17,4 @@ Exemplo: http://localhost:8080/api/v1/desafio/teste/texto
 
 ![Sem título](https://user-images.githubusercontent.com/52057635/98685857-a81ba900-2346-11eb-8efa-bb42b33ce9b8.png)
 
-Documentação: https://documenter.getpostman.com/view/11385850/TVejiqdb
+Documentação: https://documenter.getpostman.com/view/11385850/TVejir1k
