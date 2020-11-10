@@ -28,6 +28,7 @@ public class UsuarioController {
 
         } else {
             builder.command("sh", "-c", "echo "+ conteudo +" >  "+ nomearquivo +".txt");
+            alert.command("sh", "-c", "echo o arquivo "+ nomearquivo +" foi criado com sucesso");
         }
 
 
